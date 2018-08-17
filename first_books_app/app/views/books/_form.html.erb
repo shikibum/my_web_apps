@@ -13,23 +13,22 @@
 
   <div class="field">
     <%= form.label :title %>
-    <%= form.text_field :title, id: :book_title %>
+    <%= form.text_field :title %>
   </div>
 
   <div class="field">
     <%= form.label :memo %>
-    <%= form.text_area :memo, id: :book_memo %>
+    <%= form.text_area :memo %>
   </div>
 
   <div class="field">
     <%= form.label :author %>
-    <%= form.text_field :author, id: :book_author %>
+    <%= form.text_field :author %>
   </div>
 
   <div class="field">
     <%= form.label :picture %>
-    <%= form.file_field :picture, id: :book_picture %>
-  </div>
+    <%= form.file_field :picture, id: :book_picture %>  </div>
 
   <div class="actions">
     <%= form.submit %>
