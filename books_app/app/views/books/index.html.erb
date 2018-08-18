@@ -30,4 +30,13 @@
 
 <br>
 
+<%= "[%s]:"%(I18n.locale.to_s) %>
+<%=t :hello %>
+<% I18n.locale = :ja %>
+<%= "[%s]:"%(I18n.locale.to_s) %>
+<%=t :hello %>
+<% I18n.locale = :es %>
+<%= "[%s]:"%(I18n.locale.to_s) %>
+<%=t :hello %>
+
 <%= link_to 'New Book', new_book_path %>
