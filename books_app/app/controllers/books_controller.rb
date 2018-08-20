@@ -5,6 +5,11 @@ class BooksController < ApplicationController
   # GET /books.json
   def index
     @books = Book.all
+    flash[:title] = t(:title_flash)
+    flash[:memo] = t(:memo_flash)
+    flash[:author] = t(:author_flash)
+    flash[:picture] = t(:picture_flash)
+    flash[:add_new] = t(:add_new_flash)
   end
 
   # GET /books/1
@@ -15,6 +20,8 @@ class BooksController < ApplicationController
   # GET /books/new
   def new
     @book = Book.new
+    flash[:submit] = t(:submit_flash)
+    flash[:back] = t(:back_flash)
   end
 
   # GET /books/1/edit
