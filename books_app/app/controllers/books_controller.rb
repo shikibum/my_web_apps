@@ -6,7 +6,7 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
-    @books = Book.all
+    @books = Book.page(params[:page]).per(5).order('updated_at DESC')
     flash[:title] = t(:title_flash)
     flash[:memo] = t(:memo_flash)
     flash[:author] = t(:author_flash)
