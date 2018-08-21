@@ -1,0 +1,8 @@
+es:
+  language: "Español"
+  title: "Titlo"
+  memo: "Nota"
+  author: "Autor"
+  picture: "Foto"
+  add_new: "Agregar Libro"
+  back: "Volver"
