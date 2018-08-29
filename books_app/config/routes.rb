@@ -1,16 +1,12 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-<<<<<<< Updated upstream
-  devise_for :users
-=======
   root to: 'books#index'
   get 'users/new'
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     omniauth_callbacks: 'users/omniauth_callbacks' 
   }
->>>>>>> Stashed changes
   get 'books/index'
   resources :books
 
