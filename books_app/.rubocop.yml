@@ -1,0 +1,11 @@
+# "Missing top-level class documentation comment."を無効
+Style/Documentation:
+  Enabled: false
+  
+# "Line is too long"を無効
+Metrics/LineLength:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: true
+  Max: 20
