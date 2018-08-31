@@ -7,7 +7,10 @@ body {
   line-height: 18px;
 }
 
-p, ol, ul, td {
+p,
+ol,
+ul,
+td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
@@ -21,11 +24,9 @@ pre {
 
 a {
   color: #000;
-
   &:visited {
     color: #666;
   }
-
   &:hover {
     color: #fff;
     background-color: #000;
@@ -41,7 +42,8 @@ td {
 }
 
 div {
-  &.field, &.actions {
+  &.field,
+  &.actions {
     margin-bottom: 10px;
   }
 }
@@ -62,7 +64,6 @@ div {
   padding: 7px 7px 0;
   margin-bottom: 20px;
   background-color: #f0f0f0;
-
   h2 {
     text-align: left;
     font-weight: bold;
@@ -72,7 +73,6 @@ div {
     background-color: #c00;
     color: #fff;
   }
-
   ul li {
     font-size: 12px;
     list-style: square;
