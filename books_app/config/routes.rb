@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'users/new'
   devise_for :users, controllers: {
     registrations: 'users/registrations',
-    omniauth_callbacks: 'users/omniauth_callbacks' 
+    omniauth_callbacks: 'users/omniauth_callbacks'
   }
   get 'books/index'
   resources :books

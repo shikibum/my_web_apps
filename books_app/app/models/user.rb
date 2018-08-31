@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -14,7 +16,7 @@ class User < ApplicationRecord
         user.email = auth.info.email
         user.name = auth.info.name # assuming the user model has a name
         user.image_url = auth.info.image
-        # If you are using confirmable and the provider(s) you use validate emails, 
+        # If you are using confirmable and the provider(s) you use validate emails,
         # uncomment the line below to skip the confirmation emails.
         # user.skip_confirmation!
       end
@@ -23,7 +25,7 @@ class User < ApplicationRecord
 
   def self.new_with_session(params, session)
     if session['devise.user_attributes']
-      new(session["devise.user_attributes"]) do |user|
+      new(session['devise.user_attributes']) do |user|
         user.attributes = params
       end
     else
@@ -32,7 +34,7 @@ class User < ApplicationRecord
   end
 
   def password_required?
-    super && provider.blank?  # provider属性に値があればパスワード入力免除
+    super && provider.blank? # provider属性に値があればパスワード入力免除
   end
 
   # Edit時、OmniAuthで認証したユーザーのパスワード入力免除するため、Deviseの実装をOverrideする。
