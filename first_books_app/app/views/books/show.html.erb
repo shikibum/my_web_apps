@@ -17,7 +17,7 @@
 
 <p>
   <strong>Picture:</strong>
-  <%= @book.picture %>
+  <%= image_tag(@book.picture_url) if @book.picture.present? %>
 </p>
 
 <%= link_to 'Edit', edit_book_path(@book) %> |

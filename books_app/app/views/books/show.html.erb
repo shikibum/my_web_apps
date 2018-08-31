@@ -1,0 +1,22 @@
+<p>
+  <strong><%= t :title %>:</strong>
+  <%= @book.title %>
+</p>
+
+<p>
+  <strong><%= t :memo %>:</strong>
+  <%= @book.memo %>
+</p>
+
+<p>
+  <strong><%= t :author %>:</strong>
+  <%= @book.author %>
+</p>
+
+<p>
+  <strong><%= t :picture %>:</strong>
+  <%= image_tag(@book.picture_url) if @book.picture.present? %>
+</p>
+
+<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'Back', books_path %>
