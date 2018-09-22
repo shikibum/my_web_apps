@@ -1,17 +1,17 @@
 require 'rails_helper'
 
 RSpec.describe BooksController, type: :controller do
-  render_views
   describe '#index' do
-    context '@booksが返ってくる' do
-      let!(:book) { Book.create(title: 'Don quijote', memo: 'ドン・キホーテ', author: 'Cervantes') }
-      let(:user) { User.create(email: 'hoge@hoge.com', password: 'passpass') }
-      it '' do
-        login_user(user)
-        get :index
-        expect(response.body).to include('Don quijote')
-      end
+    @book1 = let!(:book) { Book.create(title: 'Don quijote', memo: 'ドン・キホーテ', author: 'Cervantes') } # let!は実行される
+    @book2 = let!(:book) { Book.create(title: '吾輩は猫である', memo: 'にゃーん', author: '夏目漱石') } # let!は実行される
+    let(:user) { User.create(email: 'hoge@hoge.com', password: 'passpass') }
+
+    it '@booksに全ての本を割り当てること' do
+      login_user(user)
+      get :index
+      expect(response.status).to eq 200
+      # expect(assigns(:books)).to match_array([@book1,@book2])
+      # expect(response).to render_template :index
     end
   end
 end
-
