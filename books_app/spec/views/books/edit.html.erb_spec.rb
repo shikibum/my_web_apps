@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe 'books/edit' do
-    before(:each) do
-      @book = Book.create(title: 'Don quijote', memo: 'ドン・キホーテ', author: 'Cervantes')
-    end
+  before(:each) do
+    @book = Book.create(title: 'Don quijote', memo: 'ドン・キホーテ', author: 'Cervantes')
+  end
 
   it 'renders the edit book form' do
     render template: 'books/edit.html.erb'
