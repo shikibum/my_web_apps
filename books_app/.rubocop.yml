@@ -1,6 +1,9 @@
 # "Missing top-level class documentation comment."を無効
 Style/Documentation:
   Enabled: false
+
+Style/AsciiComments:
+  Enabled: false
   
 # "Line is too long"を無効
 Metrics/LineLength:
@@ -9,3 +12,17 @@ Metrics/LineLength:
 Metrics/AbcSize:
   Enabled: true
   Max: 20
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+
+Metrics/MethodLength:
+  Max: 150
+
+Metrics/BlockLength:
+  Max: 111
+
+MixinUsage:
+  Include:
+    - app/**/*.rb
