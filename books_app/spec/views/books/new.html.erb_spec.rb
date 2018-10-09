@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe 'books/new' do
-    before(:each) do
-      assign(:book, Book.new)
-    end
+  before(:each) do
+    assign(:book, Book.new)
+  end
 
   it 'renders new book form' do
     render template: 'books/new.html.erb'

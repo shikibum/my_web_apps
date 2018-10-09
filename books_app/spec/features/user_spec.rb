@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # # frozen_string_literal: true
 
 require 'rails_helper'
@@ -6,12 +8,12 @@ require 'selenium-webdriver'
 RSpec.feature 'Users', type: :feature do
   scenario 'sign up new user, edit, logout, login, and destroy', js: true do
     visit new_user_registration_path
-    expect{
+    expect do
       fill_in 'Email', with: 'hoge@hoge.com'
       fill_in 'Password', with: 'passpass'
       fill_in 'Password confirmation', with: 'passpass'
       click_button 'Sign up'
-    }.to change(User, :count).by(1)
+    end.to change(User, :count).by(1)
 
     click_link 'Logout'
 
@@ -25,17 +27,18 @@ RSpec.feature 'Users', type: :feature do
     click_button 'Update'
     expect(page).to have_content 'Logged in as kawauso'
 
-    expect{  
+    expect do
       click_link 'Edit profile'
       click_button 'Cancel my account'
       driver = Selenium::WebDriver.for :chrome
       accept_alert do
-        alert = driver.switch_to.alert.accept rescue Selenium::WebDriver::Error::NoAlertOpenError
+        alert = begin
+                  driver.switch_to.alert.accept
+                rescue StandardError
+                  Selenium::WebDriver::Error::NoAlertOpenError
+                end
       end
-    }.to change(User, :count).by(0)
+    end.to change(User, :count).by(0)
     expect(page).to have_content 'Log in'
-  end
-
-  scenario 'sign up new user with Twitter' do
   end
 end

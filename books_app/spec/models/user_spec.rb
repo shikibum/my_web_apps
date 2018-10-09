@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe User do
@@ -14,7 +16,7 @@ RSpec.describe User do
         user = User.create(email: 'hoge@hoge.com', provider: 'twitter', uid: '1013638572186800129')
         expect(user.password_required?).to eq false
       end
-    end 
+    end
   end
 
   describe 'update_with_password' do
@@ -31,7 +33,7 @@ RSpec.describe User do
       let(:user) do
         user = FactoryBot.create(:user)
       end
-      
+
       it 'パスワードなしだと更新できない' do
         expect(user.update_with_password(name: 'shikibu')).to eq false
       end

@@ -9,3 +9,12 @@ Metrics/LineLength:
 Metrics/AbcSize:
   Enabled: true
   Max: 20
+
+# Use only ascii symbols in comments.
+AsciiComments:
+  Enabled: false
+
+#Block has too many lines
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
