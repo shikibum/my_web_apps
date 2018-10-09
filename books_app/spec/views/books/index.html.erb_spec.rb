@@ -6,7 +6,6 @@ describe 'books/index' do
   before(:each) do
     @book1 = Book.create(title: 'Don quijote', memo: 'ドン・キホーテ', author: 'Cervantes')
     @book2 = Book.create(title: '吾輩は猫である', memo: 'にゃーん', author: '夏目漱石')
-    # @books = [@book1, @book2]
     @books = Book.page(1).per(5).order('updated_at DESC')
   end
 
