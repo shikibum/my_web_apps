@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.feature 'User', type: :feature do
   let(:user) { FactoryBot.create(:user) }
-  
+   
   scenario 'login and logout with password' do
     visit root_path
     fill_in 'Email', with: user.email
