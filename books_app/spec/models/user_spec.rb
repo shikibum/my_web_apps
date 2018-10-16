@@ -30,13 +30,15 @@ RSpec.describe User do
     end
 
     context 'Twitter_userでない場合' do
+      let(:user) do
+        user = FactoryBot.create(:user)
+      end
+
       it 'パスワードなしだと更新できない' do
-        user = User.create(email: 'hoge@hoge.com', password: 'passpass')
         expect(user.update_with_password(name: 'shikibu')).to eq false
       end
 
       it 'パスワードありだと更新できる' do
-        user = User.create(email: 'hoge@hoge.com', password: 'passpass')
         expect(user.update_with_password(name: 'shikibu', current_password: 'passpass')).to eq true
       end
     end

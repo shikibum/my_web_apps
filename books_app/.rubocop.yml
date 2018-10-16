@@ -13,15 +13,18 @@ Metrics/AbcSize:
   Enabled: true
   Max: 20
 
+# Use only ascii symbols in comments.
+AsciiComments:
+  Enabled: false
+
+#Block has too many lines
 Metrics/BlockLength:
+  Max: 111
   Exclude:
     - 'spec/**/*'
 
 Metrics/MethodLength:
   Max: 150
-
-Metrics/BlockLength:
-  Max: 111
 
 MixinUsage:
   Include:
